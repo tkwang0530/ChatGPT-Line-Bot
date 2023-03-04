@@ -62,6 +62,9 @@ Import the ChatGPT bot to Line and start interacting with it by simply typing te
         5. Line Channel Access Token:
             - key: `LINE_CHANNEL_ACCESS_TOKEN`
             - value: `[obtained from step one]`
+        6. Message List Limit:
+            - key: `MESSAGE_LIST_LIMIT`
+            - value: `ChatGPT can remember the last n questions and answers`
 2. Start running:
     1. Click on `Run` on the top.
     2. After successful, the right-side screen will display `Hello World`, and the **URL** on the top of the screen should be copied down.
@@ -82,6 +85,7 @@ To start a conversation with ChatGPT, simply type your message in the text input
 | Command | Description |
 | ------- | ----------- |
 | `/imagine` |  Type `/imagine` followed by text in the input box to call the DALL·E 2 model and generate an image. |
+| `/reset` | ChatGPT will remember the last n questions and answers，use this command to clear its memory。|
 
 ## Related Projects
 - [gpt-ai-assistant](https://github.com/memochou1993/gpt-ai-assistant)

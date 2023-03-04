@@ -62,6 +62,9 @@
         5. Line Channel Access Token:
             - key: `LINE_CHANNEL_ACCESS_TOKEN`
             - value: `[由步驟一取得]`
+        6. Message List Limit:
+            - key: `MESSAGE_LIST_LIMIT`
+            - value: `ChatGPT 會記住前 n 次的問答紀錄`
 2. 開始執行
     1. 點擊上方的 `Run`
     2. 成功後右邊畫面會顯示 `Hello World`，並將畫面中上方的**網址複製**下來

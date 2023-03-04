@@ -25,7 +25,8 @@ handler = WebhookHandler(os.getenv('LINE_CHANNEL_SECRET'))
 models = OpenAIModel(api_key=os.getenv('OPENAI_API'),
                      model_engine=os.getenv('OPENAI_MODEL_ENGINE'))
 
-memory = Memory(system_message=os.getenv('SYSTEM_MESSAGE'))
+memory = Memory(system_message=os.getenv('SYSTEM_MESSAGE'),
+                message_list_limit=os.getenv('MESSAGE_LIST_LIMIT'))
 chatgpt = ChatGPT(models, memory)
 dalle = DALLE(models)
 
