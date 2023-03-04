@@ -22,7 +22,8 @@ app = Flask(__name__)
 line_bot_api = LineBotApi(os.getenv('LINE_CHANNEL_ACCESS_TOKEN'))
 handler = WebhookHandler(os.getenv('LINE_CHANNEL_SECRET'))
 
-models = OpenAIModel(api_key=os.getenv('OPENAI_API'), model_engine=os.getenv('OPENAI_MODEL_ENGINE'))
+models = OpenAIModel(api_key=os.getenv('OPENAI_API'),
+                     model_engine=os.getenv('OPENAI_MODEL_ENGINE'))
 
 memory = Memory(system_message=os.getenv('SYSTEM_MESSAGE'))
 chatgpt = ChatGPT(models, memory)
@@ -53,6 +54,9 @@ def handle_text_message(event):
             original_content_url=response,
             preview_image_url=response
         )
+    elif text.startswith('/reset'):
+        chatgpt.clean_history(user_id)
+        msg = TextSendMessage(text='Reset ChatGPT conversation history')
     else:
         response = chatgpt.get_response(user_id, text)
         msg = TextSendMessage(text=response)
@@ -60,7 +64,7 @@ def handle_text_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         msg
-        )
+    )
 
 
 @app.route("/", methods=['GET'])
