@@ -82,6 +82,7 @@
 | 指令 | 說明 |
 | --- | ----- |
 | `/imagine` | 在輸入框輸入 `/imagine` + 文字，就會調用 DALL·E 2 模型，即可生成圖像。|
+| `/reset` | ChatGPT 會記住前十次的問答紀錄，調用此指令則會清除。|
 
 ## 相關專案
 - [gpt-ai-assistant](https://github.com/memochou1993/gpt-ai-assistant)
